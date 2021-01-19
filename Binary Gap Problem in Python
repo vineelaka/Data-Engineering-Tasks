@@ -1,0 +1,14 @@
+n1=0
+def solution(N):
+    # write your code in Python 3.6
+    global n1
+    if N > 1: 
+        solution(N // 2) 
+
+    n1=n1*10+N % 2
+    r=str(n1).split('1')
+
+    res=r[:-1] if '0' in r[-1] else r
+    return max([len(res[i]) if len(res)>1 else 0 for i in range(len(res))])
+
+    pass
